@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C00CQBT1BL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C00CQBT1BL');
-</script>
-  
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NSN7LQQZ');</script>
-<!-- End Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NSN7LQQZ');</script>
   <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ismail Yahyaoui — Data Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -478,15 +467,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
+
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSN7LQQZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">I<span>Y</span></a>
   <ul class="nav-links">
@@ -497,7 +483,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-blob-2"></div>
   <div class="hero-bg-text">DATA</div>
@@ -533,7 +518,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-wrap">
     <div class="about-grid">
@@ -557,7 +541,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="gold-line"></div>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-wrap">
     <div class="reveal">
@@ -618,7 +601,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="gold-line"></div>
 
-<!-- CV -->
 <section id="cv">
   <div class="section-wrap">
     <div class="reveal">
@@ -725,7 +707,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="reveal">
     <span class="contact-eyebrow">Contact</span>
@@ -738,7 +719,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span class="footer-mark">IY</span>
   <span>© 2025 Ismail Yahyaoui</span>
@@ -767,24 +747,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-  <script>
-  // On écoute tous les clics sur le document
+
+  // GTM EVENT TRACKER (Custom for DataLayer)
   document.addEventListener('click', function(e) {
-    // On cherche si l'élément cliqué est un lien (<a>) ou dans un lien
     const link = e.target.closest('a');
-    
-    if (link && typeof gtag !== 'undefined') {
-      // On envoie l'événement à Google Analytics
-      gtag('event', 'click_lien_portfolio', {
-        'event_category': 'Navigation',
-        'link_text': link.innerText.trim(), // Le texte du bouton (ex: "Voir mes projets")
-        'link_url': link.href,              // L'adresse de destination
+    if (link) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'click_lien_portfolio',
+        'link_text': link.innerText.trim(),
+        'link_url': link.href,
         'location': window.location.pathname
       });
-      
-      // Petit log console pour que TU puisses vérifier que ça marche (F12 dans ton navigateur)
-      console.log("Trace envoyée : Clic sur " + link.innerText.trim());
+      console.log("Trace envoyée dans le dataLayer : Clic sur " + link.innerText.trim());
     }
   });
 </script>
